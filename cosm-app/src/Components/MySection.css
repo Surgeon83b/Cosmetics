@@ -1,0 +1,22 @@
+.page__wrapper {
+  margin-top: 0px;
+  display: flex;
+}
+
+.page {
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.page__current {
+  border: 2px solid orange;
+  font-weight: bold;
+}
+
+section.sec1 {
+  display: flex;
+  flex: 1;
+  flex-direction: column; 
+  justify-content: start;
+}
