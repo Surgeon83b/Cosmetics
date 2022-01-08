@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.secondflex {
+    display: flex; 
+    justify-content: center;
+    height: 70%;
+}
+
+.sec12 {
+    display: flex; 
+}
+
+hr {
+    width: 25%;
+}
+
+.itemmark {
+    list-style-type: circle; 
+    margin-left: 15pt;
+    margin-right: 15pt;
+}

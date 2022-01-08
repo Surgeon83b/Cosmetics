@@ -1,0 +1,5 @@
+.RItem {
+    background-color: orange;
+    list-style-type: none;
+    display: flex;
+}
