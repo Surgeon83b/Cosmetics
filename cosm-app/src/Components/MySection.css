@@ -20,3 +20,13 @@ section.sec1 {
   flex-direction: column; 
   justify-content: start;
 }
+.sec11 {
+  display: flex;
+  flex-direction: row;
+}
+
+.sec12 {
+  display: flex; 
+  flex-direction: column;
+}
+

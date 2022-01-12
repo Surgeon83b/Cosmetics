@@ -9,3 +9,14 @@ export const getPagesArray = (totalPages) => {
   }
   return result;
 }
+
+export async function getData(url) {
+  const data = await fetch(url,
+  {
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
+  });
+  return await data.json();
+}

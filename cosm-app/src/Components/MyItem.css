@@ -28,3 +28,7 @@ p.caption {
     margin-left: 2pt; 
     border: none;
 }
+.Rank {
+    display: flex;
+    flex-direction: row;  
+}
