@@ -1,21 +1,15 @@
 import React from 'react';
-import RateItem from './RateItem.jsx';
-import './LeftPanel.css';
+import '../styles/LeftPanel.css';
+import MyList from './MyList';
 
 const nameItems = ["Медузка", "Лотос и бамбук", "Крем увлажняющий", "CC-крем"];
+const news = ["Мобильное приложение Mirror Me"];
 
 export default function LeftPanel() {
-
-  return(
+  return (
     <section className="leftcol">
-      <ul className="ratecol">
-        <li className="litemtop">Рейтинг косметики</li>
-        {nameItems.map((item) => <RateItem key={item} item={item} />)}
-      </ul>
-      <ol className="ratecol">
-        <li className="litemtop">Новости</li>
-        <li className="litem">1.</li>
-      </ol>
+      <MyList name="Рейтинг средств" type="ol" list={nameItems}></MyList>
+      <MyList name="Новости" type="ul" list={news}></MyList>
     </section>
   )
 }

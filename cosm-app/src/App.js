@@ -1,43 +1,32 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import './Cosm.css';
 import MyNavPanel from './Components/MyNavPanel.jsx';
 import Home from './Components/Home';
-import Page3 from './pages/Page3';
 import Ranking from './pages/Ranking';
-import MainSec from './Components/MainSec';
+import AboutItem from './pages/AboutItem';
+import Contacts from './pages/Contacts';
 
 
 function App() {
-  const pages = { p1: "Каталог",
-                  p2: "Рейтинг средств",
-                  p3: "Контакты"
-        }
+  const pages = {
+    p1: "КАТАЛОГ",
+    p2: "РЕЙТИНГ ПРОДУКТОВ",
+    p3: "КОНТАКТЫ"
+  }
   return (
     <Router>
       <div className="App">
-          <MyNavPanel pages={pages} />
-        <div className="container" >
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/pages/Page3' component={Page3} />
-            <Route exact path='/pages/Ranking' component={Ranking} />
-          </Switch>
-        </div>
+        <MyNavPanel pages={pages} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/pages/Contacts' component={Contacts} />
+          <Route exact path='/pages/Ranking' component={Ranking} />
+          <Route exact path='/pages/AboutItem' component={AboutItem} />
+        </Switch>
       </div>
     </Router>
   );
 }
-/*
-function App() {
-  return (
-    <>
-      <div className="App">
-        
-      </div>
-    </>
-  );
-}*/
 
 export default App;

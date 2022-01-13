@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import '../styles/Description.css';
 
 export default function Description({text}) {
   return (
-    <div>
+    <div className='descr'>
       <p>
         {text}
       </p>
