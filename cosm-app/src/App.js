@@ -1,12 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import MyNavPanel from './Components/MyNavPanel.jsx';
-import Home from './Components/Home';
-import Ranking from './pages/Ranking';
-import AboutItem from './pages/AboutItem';
-import Contacts from './pages/Contacts';
-
+import AppRouter from './Components/AppRouter';
+import { CurItem } from './context';
 
 function App() {
   const pages = {
@@ -14,18 +11,19 @@ function App() {
     p2: "РЕЙТИНГ ПРОДУКТОВ",
     p3: "КОНТАКТЫ"
   }
+  const [curID, setCurID] = useState(1);
   return (
-    <Router>
-      <div className="App">
-        <MyNavPanel pages={pages} />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/pages/Contacts' component={Contacts} />
-          <Route exact path='/pages/Ranking' component={Ranking} />
-          <Route exact path='/pages/AboutItem' component={AboutItem} />
-        </Switch>
-      </div>
-    </Router>
+    <CurItem.Provider value={{
+      curID,
+      setCurID
+    }}>
+      <Router>
+        <div className="App">
+          <MyNavPanel pages={pages} />
+          <AppRouter />
+        </div>
+      </Router>
+    </CurItem.Provider>
   );
 }
 

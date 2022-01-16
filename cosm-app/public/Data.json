@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "capt": "Масло для бороды",
     "imgn": "/images/mary-kay-mkmen-beard-oil-dropper.png",
     "refi": "https://www.marykay.by/cosmetics/news/maslo-dlya-borody",
@@ -8,6 +9,7 @@
   },
 
   {
+    "id": 2,
     "capt": "Набор \"Сказочная роскошь\"",
     "imgn": "/images/Kit-Illuminea-scented candle in box.jpg",
     "refi": "https://www.marykay.by/cosmetics/news/nabor-skazochnaya-roskosh-duhi-illuminea-svecha-aromaticheskaya",
@@ -16,6 +18,7 @@
   },
 
   {
+    "id": 3,
     "capt": "Мицеллярная вода Mary Kay®",
     "imgn": "/images/67233037.jpg",
     "refi": "https://www.marykay.by/cosmetics/news/micellyarnaya-voda-mary-kay",
@@ -24,6 +27,7 @@
   },
 
   {
+    "id": 4,
     "capt": "Набор с системой Skinvigorate Sonic™ + Съемная массажная насадка + Питательное масло Mary Kay Naturally™ и пакет",
     "imgn": "/images/sv.jpg",
     "refi": "https://www.marykay.by/cosmetics/news/nabor-skazochnaya-roskosh-duhi-illuminea-svecha-aromaticheskaya",
@@ -32,6 +36,7 @@
   },
 
   {
+    "id": 5,
     "capt": "Набор средств для тела «Сочная черешня»: лосьон для тела, парфюмерный спрей",
     "imgn": "/images/vish.jpg",
     "refi": "https://www.marykay.by/cosmetics/news/5-nabor-sredstv-dlya-tela-sochnaya-chereshnya-losjon-dlya-tela-parfyumernyj-sprej",
@@ -40,6 +45,7 @@
   },
 
   {
+    "id": 6,
     "capt": "Успокаивающее восстанавливающее молочко для лица Clinical Solutions",
     "imgn": "/images/mol.jpg",
     "refi": "https://www.marykay.by/cosmetics/skin-care/uspokaivayuschee-vosstanavlivayuschee-molochko-dlya-lica-clinical-solutions",
