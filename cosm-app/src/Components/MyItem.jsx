@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Description from './Description';
 import '../styles/MyItem.css';
 
@@ -9,7 +9,8 @@ export default function MyItem({ id, caption, imgname, isDef, info }) {
   if (capt.length > 40) {
     capt = capt.slice(0, 40) + ' ...';
   }
-  console.log(id);
+  console.log('MyItem '+id);
+
   return (
     <div className="Rank">
       <div className='new'>

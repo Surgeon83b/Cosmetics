@@ -1,43 +1,40 @@
 import React, { useState } from 'react';
 import MyTextarea from './MyTextarea';
 
-export default function SingleComment({ id, name, text, bgc, isShowedButton }) {
+export default function SingleComment({ id, name, text, isShowedButton }) {
   const [_name, set_Name] = useState('');
   const [_text, set_Text] = useState('');
+  const [_id, set_Id] = useState(id);
+  let typeOf = isShowedButton ? 'ADD' : 'SHOW';
 
-  const getName = (nam) => {
-    set_Name(nam);
-  }
-  const getText = (tex) => {
-    set_Text(tex);
-  }
-  const addComment = () => {
-    alert(_name + ': ' + _text)
-  }
-
-  const addToComments = (id, nam, tex) => {
-    alert('addToComments ' + localStorage[id]);
-    if (JSON.parse(localStorage.getItem(id))===null) {
-      try {
-        let list = { name: "Вася", text: "Ничего так маслице" };
-        localStorage.setItem(id, JSON.stringify(list));
-      }
-      catch (e) { alert(e) }
+  /* const getName = (nam) => {
+     console.log(nam);
+     set_Name(nam);
+     console.log(_name);
+   }
+   const getText = (tex) => {
+     console.log(tex);
+     set_Text(tex);
+   }
+   */
+  const addToComments = (e) => {
+    e.preventDefault();
+    if (JSON.parse(localStorage.getItem(_id)) === null) {
+      let list = [{ name: '⛹ ' + _name, text: _text }];
+      localStorage.setItem(_id, JSON.stringify(list));
     } else {
-      let list = JSON.parse(localStorage.getItem(id));
-      const newComm = { name: nam, text: tex };
+      let list = JSON.parse(localStorage.getItem(_id));
+      const newComm = { name: '⛹ ' + _name, text: _text };
       list.push(newComm);
-      localStorage.setItem(id, JSON.stringify(list));
+      localStorage.setItem(_id, JSON.stringify(list));
     }
   }
 
   return (
-    <form>
-      <MyTextarea name={name} cols='60' rows='1' valu={name} isEdited='true' bgc={bgc} placeholder='⛹ Ваше имя' get={getName} />
-      <MyTextarea name={text} cols='60' rows='2' valu={text} isEdited='true' bgc={'grey'} placeholder='Оставьте ваш отзыв' get={getText} />
+    <form onSubmit={(e) => addToComments(e)}>
+      <MyTextarea isFor='name' type={typeOf} name={name} cols='60' rows='1' valu={name} placeholder='⛹ Ваше имя' get={set_Name} />
+      <MyTextarea isFor='text' type={typeOf} name={text} cols='60' rows='2' valu={text} placeholder='Оставьте ваш отзыв' get={set_Text} />
       {isShowedButton && <input type="submit" align="right" value="Отправить" />}
-      <button onClick={() => addToComments(id, _name, _text)}>test</button>
     </form>
   )
 }
-// onClick={addToComments(1, _name, _text)} 
