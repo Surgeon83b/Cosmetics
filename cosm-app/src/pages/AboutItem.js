@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import MyItem from '../Components/MyItem';
 import SingleComment from '../Components/SingleComment';
@@ -10,11 +10,6 @@ import '../styles/MySection.css';
 export default function AboutItem() {
   const params = useParams();
   const itID = params.id;
-  alert('AboutItem ' + itID);
-
-  const [list, setList] = useState(JSON.parse(localStorage.getItem(itID)));
-  const [list1, setList1] = useState([]);
-  // const list = JSON.parse(localStorage.getItem(data.id));
 
   const getData = (url) => {
     fetch(url,
@@ -25,27 +20,31 @@ export default function AboutItem() {
         }
       })
       .then(function (response) {
-        console.log(response)
         return response.json();
       })
       .then(function (myJson) {
-        console.log(myJson);
+        console.log('getData ', myJson);
         setList1(myJson);
       })
   }
-
-  getData('/public/Data.json');
+  const [list, setList] = useState(JSON.parse(localStorage.getItem(itID)));
+  const [list1, setList1] = useState([]);
 
   const refreshList = (list) => {
     setList(list);
   }
 
-  let curObj = list1.find((elem) => { return elem.id === itID })
+  useEffect(() => {
+    console.log("inuseEffect");
+    getData('/Data.json')
+  }, []);
+
+  let curObj = list1.find((elem) => elem.id == itID);
 
   return (
     <Base add={
       <section className="mainsec">
-        <MyItem caption={curObj.capt} imgname={curObj.imgn} isDef info={curObj.info} id={itID} />
+        {curObj && <MyItem caption={curObj.capt} imgname={curObj.imgn} isDef info={curObj.info} id={itID} />}
 
         <SingleComment id={itID} name="" text="" isShowedButton={true} set={refreshList} />
         {"Список комментариев"}
@@ -54,6 +53,3 @@ export default function AboutItem() {
     } />
   )
 }
-
-//{(listOfComments) && listOfComments.map((value, index) => <SingleComment name={value.name} text={value.text} bgc={'green'} isShowedButton='false' />)}
-// list - как состояние, передать функцию пропсом

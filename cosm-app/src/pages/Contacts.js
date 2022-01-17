@@ -35,7 +35,6 @@ export default function Contacts() {
       comment: curComment
     }
     alert(toAdd);
-    debugger;
     setList(list.push(toAdd));
     localStorage.setItem("contacts", JSON.stringify(list));
   }
