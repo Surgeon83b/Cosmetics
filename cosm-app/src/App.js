@@ -1,29 +1,18 @@
-import React, {useState} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import MyNavPanel from './Components/MyNavPanel.jsx';
 import AppRouter from './Components/AppRouter';
-import { CurItem } from './context';
+import MyNavPanel from './Components/MyNavPanel';
+import { pages } from './utils/pages.js';
 
 function App() {
-  const pages = {
-    p1: "КАТАЛОГ",
-    p2: "РЕЙТИНГ ПРОДУКТОВ",
-    p3: "КОНТАКТЫ"
-  }
-  const [curID, setCurID] = useState(1);
   return (
-    <CurItem.Provider value={{
-      curID,
-      setCurID
-    }}>
-      <Router>
-        <div className="App">
-          <MyNavPanel pages={pages} />
-          <AppRouter />
-        </div>
+    <div className="App">
+      <Router path='/'>
+        <MyNavPanel pages={pages} />
+        <AppRouter />
       </Router>
-    </CurItem.Provider>
+    </div>
   );
 }
 

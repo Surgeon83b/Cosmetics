@@ -1,3 +1,9 @@
+export const pages = {
+  p1: "КАТАЛОГ",
+  p2: "РЕЙТИНГ ПРОДУКТОВ",
+  p3: "КОНТАКТЫ"
+}
+
 export const getPagesCount = (totalCount, limit) => {
   return (Math.ceil(totalCount / limit))
 }

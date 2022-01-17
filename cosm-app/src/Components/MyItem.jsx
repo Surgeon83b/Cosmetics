@@ -14,10 +14,16 @@ export default function MyItem({ id, caption, imgname, isDef, info }) {
   return (
     <div className="Rank">
       <div className='new'>
-        <Link to={{pathname: '/pages/AboutItem', propsSearch: propss}}> <img src={imgname} alt={imgname}></img> </Link>
+        <Link to={{pathname: `/pages/AboutItem/${id}`, propsSearch: propss}}> <img src={imgname} alt={imgname}></img> </Link>
         <p className="caption">{capt}</p>
       </div>
       {isDef && <Description text={info} />}
     </div>
   )
 }
+
+/*
+   2)передать в роут пропс
+
+
+*/

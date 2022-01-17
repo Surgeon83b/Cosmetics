@@ -5,16 +5,6 @@ import { getPagesArray, getPagesCount } from '../utils/pages.js'
 
 export default function MainSec({ isDef }) {
 
-	/*async function getData(url) {
-		const data = await fetch(url,
-		{
-			headers : { 
-				'Content-Type': 'application/json',
-				'Accept': 'application/json'
-			 }
-		});
-		return await data.json();
-	}*/
 	const [list1, setList1] = useState([]);
 	//	const [list2, setList2] = useState([]);
 
